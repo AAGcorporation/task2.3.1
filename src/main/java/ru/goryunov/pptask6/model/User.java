@@ -1,12 +1,14 @@
 package ru.goryunov.pptask6.model;
 
-import org.springframework.stereotype.Component;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-@Component
 public class User {
 
     @Id
@@ -18,10 +20,11 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "age")
-
     private int age;
+
     public User() {
     }
+
     public User(String name, String lastName, int age) {
         this.name = name;
         this.lastName = lastName;

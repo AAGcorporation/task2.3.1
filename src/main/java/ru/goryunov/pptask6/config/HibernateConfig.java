@@ -14,7 +14,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -23,11 +23,12 @@ import java.util.Properties;
 @ComponentScan(basePackages = "ru.goryunov.pptask6")
 @EnableTransactionManagement
 @PropertySource(value = "classpath:db.properties")
-public class HibernateConfig  {
+@EnableWebMvc
+public class HibernateConfig {
     private Environment environment;
 
     @Autowired
-    public void setEnvironment(Environment environment)  {
+    public void setEnvironment(Environment environment) {
         this.environment = environment;
     }
 

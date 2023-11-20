@@ -33,7 +33,7 @@
         <input type="submit" value="Add new user">
     </c:if>
     <c:if test="${!empty user.name}">
-         <input type="submit" value="Edit user">
+        <input type="submit" value="Edit user">
     </c:if>
 </form>
 </body>
